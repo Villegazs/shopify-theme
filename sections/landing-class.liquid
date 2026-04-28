@@ -1,0 +1,297 @@
+{% schema %}
+{
+  "name": "Landing Page - Clase",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de fondo",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color de texto",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "accent_color_1",
+      "label": "Color Turquesa",
+      "default": "#40E0D0"
+    },
+    {
+      "type": "color",
+      "id": "accent_color_2",
+      "label": "Color Azul",
+      "default": "#005b96"
+    },
+    {
+      "type": "url",
+      "id": "checkout_url",
+      "label": "URL de Checkout / Carrito"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing Page - Clase",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  :root {
+    --color-bg: {{ section.settings.bg_color }};
+    --color-text: {{ section.settings.text_color }};
+    --color-blue: {{ section.settings.accent_color_2 }};
+    --color-cyan: {{ section.settings.accent_color_1 }};
+  }
+  .landing-class {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  .landing-class h1, .landing-class h2, .landing-class h3 {
+    color: var(--color-blue);
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  
+  .landing-class .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .landing-class .btn {
+    display: inline-block;
+    background-color: var(--color-cyan);
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  .landing-class .btn:hover {
+    background-color: var(--color-blue);
+  }
+
+  /* Sections */
+  .landing-class-hero {
+    background-color: #f7f9fa;
+    padding: 60px 20px;
+  }
+  .landing-class-hero h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+  .landing-class-hero p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+  }
+
+  .landing-class-problem {
+    background-color: #ffffff;
+  }
+  .landing-class-problem ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .landing-class-problem ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+  }
+  .landing-class-problem ul li::before {
+    content: "✖";
+    color: var(--color-blue);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+
+  .landing-class-belief {
+    background-color: var(--color-blue);
+    color: #fff;
+  }
+  .landing-class-belief h2 {
+    color: #fff;
+  }
+  .landing-class-belief p {
+    font-size: 20px;
+  }
+
+  .landing-class-explain {
+    background-color: #ffffff;
+  }
+
+  .landing-class-learn {
+    background-color: #f7f9fa;
+  }
+  .landing-class-learn ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .landing-class-learn ul li {
+    font-size: 18px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+  }
+  .landing-class-learn ul li::before {
+    content: "✓";
+    color: var(--color-cyan);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .landing-class-authority {
+    background-color: #ffffff;
+  }
+  .landing-class-price {
+    background-color: var(--color-cyan);
+    color: #fff;
+  }
+  .landing-class-price h2 {
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .landing-class-bonuses {
+    background-color: #ffffff;
+  }
+  .landing-class-how {
+    background-color: #f7f9fa;
+  }
+  
+  .landing-class-final {
+    background-color: var(--color-blue);
+    color: #fff;
+  }
+  .landing-class-final h2 {
+    color: #fff;
+  }
+
+  @media (min-width: 768px) {
+    .landing-class-hero h1 {
+      font-size: 36px;
+    }
+    .landing-class-hero p {
+      font-size: 22px;
+    }
+  }
+</style>
+
+<div class="landing-class">
+  <!-- 1. HERO SECTION -->
+  <section class="landing-class-hero container">
+    <h1>Si tienes más de 40 y sientes que tu cuerpo ya no responde igual, esta clase es para ti</h1>
+    <p>Menos energía, peor sueño, aumento de peso… no es falta de disciplina, pueden ser cambios hormonales que no estás entendiendo.</p>
+    <a href="{{ section.settings.checkout_url }}" class="btn">QUIERO ENTENDER MI CUERPO</a>
+  </section>
+
+  <!-- 2. SECCIÓN PROBLEMA -->
+  <section class="landing-class-problem container">
+    <h2>¿Te reconoces en esto?</h2>
+    <ul>
+      <li>Te sientes más cansada</li>
+      <li>Duermes peor</li>
+      <li>Subes de peso sin entender por qué</li>
+      <li>Te cuesta mantener masa muscular</li>
+      <li>Sientes que tu cuerpo cambió</li>
+    </ul>
+  </section>
+
+  <!-- 3. SECCIÓN ROMPER CREENCIA -->
+  <section class="landing-class-belief container">
+    <h2>No es que estés fallando. Tu cuerpo está cambiando.</h2>
+    <p>Durante la perimenopausia y menopausia, los cambios hormonales afectan tu metabolismo, energía y composición corporal.</p>
+  </section>
+
+  <!-- 4. SECCIÓN EXPLICACIÓN -->
+  <section class="landing-class-explain container">
+    <h2>El verdadero problema</h2>
+    <p>El problema no es que no estés haciendo nada.</p>
+    <p>El problema es que estás usando estrategias que ya no funcionan en esta etapa de tu vida.</p>
+  </section>
+
+  <!-- 5. SECCIÓN QUÉ APRENDERÁN -->
+  <section class="landing-class-learn container">
+    <h2>En esta clase aprenderás:</h2>
+    <ul>
+      <li>Qué está pasando en tu cuerpo</li>
+      <li>Por qué aparecen estos síntomas</li>
+      <li>Cómo afectan los cambios hormonales tu salud</li>
+      <li>Qué necesitas empezar a hacer distinto</li>
+      <li>Cómo dejar de improvisar con tu alimentación y ejercicio</li>
+    </ul>
+  </section>
+
+  <!-- 6. SECCIÓN AUTORIDAD -->
+  <section class="landing-class-authority container">
+    <h2>Soy la Dra. María Victoria Morales</h2>
+    <p>Médica especialista en Medicina Física y Rehabilitación (Fisiatra).</p>
+    <p>Con años de experiencia médica, mi enfoque está en ayudar a mujeres mayores de 40 años a entender su cuerpo y tomar el control de su salud con ciencia, no con modas.</p>
+  </section>
+
+  <!-- 7. SECCIÓN PRECIO -->
+  <section class="landing-class-price container">
+    <p>Acceso completo por solo</p>
+    <h2>USD $9.90</h2>
+    <a href="{{ section.settings.checkout_url }}" class="btn" style="background-color: var(--color-blue);">QUIERO ACCEDER A LA CLASE</a>
+  </section>
+
+  <!-- 8. SECCIÓN BONOS -->
+  <section class="landing-class-bonuses container">
+    <h2>Además, te llevas:</h2>
+    <div style="display: flex; flex-direction: column; gap: 20px; max-width: 400px; margin: 0 auto; text-align: left;">
+      <div style="background: #f7f9fa; padding: 20px; border-radius: 8px;">
+        <h3 style="margin-top: 0;">1. Mini guía PDF</h3>
+        <p style="margin-bottom: 0;">Un resumen práctico de lo que necesitas saber.</p>
+      </div>
+      <div style="background: #f7f9fa; padding: 20px; border-radius: 8px;">
+        <h3 style="margin-top: 0;">2. Recetario antiinflamatorio</h3>
+        <p style="margin-bottom: 0;">Opciones simples para mejorar tu alimentación diaria.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. SECCIÓN CÓMO FUNCIONA -->
+  <section class="landing-class-how container">
+    <h2>¿Cómo funciona?</h2>
+    <ol style="text-align: left; max-width: 400px; margin: 0 auto; font-size: 18px;">
+      <li>Compras la clase de forma segura.</li>
+      <li>Recibes confirmación por WhatsApp.</li>
+      <li>Recibes el enlace de acceso al curso.</li>
+      <li>Accedes cuando quieras y desde donde quieras.</li>
+    </ol>
+  </section>
+
+  <!-- 10. CTA FINAL -->
+  <section class="landing-class-final container">
+    <h2>Tu cuerpo no está fallando. Está cambiando.</h2>
+    <p>Haz clic abajo y empieza a entenderlo.</p>
+    <a href="{{ section.settings.checkout_url }}" class="btn" style="background-color: var(--color-cyan); color: var(--color-blue);">ACCEDER AHORA</a>
+  </section>
+</div>
