@@ -299,7 +299,7 @@
         "media_height": "50svh",
         "section_width": "full-width",
         "extend_media": true,
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-4ede534c-8a58-433c-b45a-6b00055a8c89",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -394,7 +394,7 @@
         "media_height": "50svh",
         "section_width": "full-width",
         "extend_media": true,
-        "color_scheme": "scheme-5",
+        "color_scheme": "scheme-4ede534c-8a58-433c-b45a-6b00055a8c89",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -643,7 +643,7 @@
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
         "gap": 28,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-4ede534c-8a58-433c-b45a-6b00055a8c89",
         "padding-block-start": 48,
         "padding-block-end": 48
       }
@@ -857,7 +857,7 @@
         "section_width": "full-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "scheme-5",
+        "color_scheme": "scheme-4ede534c-8a58-433c-b45a-6b00055a8c89",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
