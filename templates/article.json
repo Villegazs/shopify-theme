@@ -58,6 +58,7 @@
           "name": "Featured image",
           "static": true,
           "settings": {
+            "image": "{{ article.image }}",
             "image_ratio": "landscape",
             "width": "fill",
             "custom_width": 100,
